@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Marauder's Chronicles — A Harry Potter Film Journey</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:wght@400;600&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+<style>
+/* ══════════════════════════════════════════════════
+   THE MARAUDER'S CHRONICLES
+   Harry Potter Cinematic Journey
+   ══════════════════════════════════════════════════ */
+
+:root {
+  --midnight: #0a0612;
+  --parchment-dark: #1a1220;
+  --parchment: #2d1f33;
+  --aged: #4a2d4f;
+  --sepia: #8b6f8e;
+  --moonlight: #c9b6d4;
+  --gold: #d4a84b;
+  --gold-light: #f0d68a;
+  --gold-dark: #9e7c2e;
+  --gryffindor: #8b0000;
+  --slytherin: #1a472a;
+  --ravenclaw: #0e1a40;
+  --hufflepuff: #ecb939;
+  --cream: #f5e6d3;
+  --ink: #1a0f12;
+  --glow-gold: rgba(212, 168, 75, 0.3);
+  --glow-purple: rgba(138, 96, 168, 0.25);
+  --shadow-soft: 0 4px 20px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 40px rgba(212, 168, 75, 0.15);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'EB Garamond', Georgia, serif;
+  background: var(--midnight);
+  color: var(--cream);
+  line-height: 1.8;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Starfield Background */
+#starfield {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Magical Particles */
+.magic-particles {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+  background:
+    radial-gradient(ellipse at 10% 20%, rgba(138, 96, 168, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at 90% 80%, rgba(212, 168, 75, 0.06) 0%, transparent 50%),
+    radial-gradient(ellipse at 50% 50%, rgba(75, 0, 130, 0.05) 0%, transparent 70%);
+}
+
+/* Texture Overlay */
+.texture-overlay {
+  position: fixed;
+  inset: 0;
+  opacity: 0.4;
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='400' height='400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 2;
+  mix-blend-mode: overlay;
+}
+
+/* Floating orbs */
+.floating-orb {
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 1;
+  filter: blur(40px);
+  animation: float 20s ease-in-out infinite;
+  opacity: 0.4;
+}
+
+.orb-1 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(138, 96, 168, 0.3), transparent 70%);
+  top: 10%;
+  left: 5%;
+  animation-delay: 0s;
+}
+
+.orb-2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(212, 168, 75, 0.2), transparent 70%);
+  bottom: 10%;
+  right: 5%;
+  animation-delay: -10s;
+}
+
+.orb-3 {
+  width: 250px;
+  height: 250px;
+  background: radial-gradient(circle, rgba(75, 0, 130, 0.25), transparent 70%);
+  top: 40%;
+  left: 40%;
+  animation-delay: -5s;
+}
+
+@keyframes float {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(30px, -40px) scale(1.1); }
+  50% { transform: translate(-20px, 20px) scale(0.95); }
+  75% { transform: translate(-30px, -30px) scale(1.05); }
+}
+
+/* ══ HEADER ══════════════════════════════════════════ */
+.site-header {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 80px 20px 60px;
+  background: linear-gradient(180deg,
+    rgba(75, 0, 130, 0.15) 0%,
+    rgba(26, 10, 40, 0.8) 50%,
+    transparent 100%
+  );
+  border-bottom: 1px solid var(--gold-dark);
+  overflow: hidden;
+}
+
+.site-header::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, rgba(212, 168, 75, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.crest-icon {
+  display: block;
+  margin: 0 auto 30px;
+  width: 90px;
+  height: 90px;
+  filter: drop-shadow(0 0 20px rgba(212, 168, 75, 0.4));
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+@keyframes glow-pulse {
+  0%, 100% { filter: drop-shadow(0 0 20px rgba(212, 168, 75, 0.4)); }
+  50% { filter: drop-shadow(0 0 35px rgba(212, 168, 75, 0.7)); }
+}
+
+.site-title {
+  font-family: 'Cinzel', serif;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 600;
+  color: var(--gold-light);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  text-shadow:
+    0 0 30px rgba(212, 168, 75, 0.3),
+    2px 2px 4px rgba(0,0,0,0.6);
+  margin-bottom: 20px;
+  position: relative;
+  display: inline-block;
+}
+
+.site-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  box-shadow: 0 0 10px var(--gold);
+}
+
+.site-subtitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  color: var(--moonlight);
+  font-style: italic;
+  letter-spacing: 4px;
+  margin-top: 30px;
+  opacity: 0.8;
+}
+
+/* ══ NAVIGATION ══════════════════════════════════════ */
+.magical-nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(10, 6, 18, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 15px 20px;
+  border-bottom: 1px solid rgba(212, 168, 75, 0.2);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.nav-pill {
+  font-family: 'Cinzel', serif;
+  font-size: 0.75rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--moonlight);
+  text-decoration: none;
+  padding: 10px 18px;
+  border: 1px solid var(--gold-dark);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  background: rgba(45, 31, 51, 0.5);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-pill::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(212, 168, 75, 0.1), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-pill:hover {
+  color: var(--gold-light);
+  border-color: var(--gold);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(212, 168, 75, 0.2);
+}
+
+.nav-pill:hover::before {
+  opacity: 1;
+}
+
+.nav-pill.active {
+  background: linear-gradient(135deg, var(--gold-dark), var(--aged));
+  color: var(--cream);
+  border-color: var(--gold);
+}
+
+/* ══ FILM SECTIONS ════════════════════════════════════ */
+.content {
+  position: relative;
+  z-index: 10;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 0 20px 80px;
+}
+
+.film-section {
+  margin-top: 80px;
+  padding: 50px;
+  background: linear-gradient(135deg,
+    rgba(26, 10, 40, 0.8) 0%,
+    rgba(45, 31, 51, 0.6) 100%
+  );
+  border: 1px solid var(--gold-dark);
+  border-radius: 2px;
+  position: relative;
+  box-shadow:
+    var(--shadow-soft),
+    inset 0 0 60px rgba(138, 96, 168, 0.05);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 0.8s ease;
+}
+
+.film-section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.film-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg,
+    transparent,
+    var(--gold),
+    transparent
+  );
+  box-shadow: 0 0 15px var(--gold);
+}
+
+.film-number {
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.film-number::before,
+.film-number::after {
+  content: '';
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+}
+
+.film-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(1.6rem, 4vw, 2.2rem);
+  font-weight: 600;
+  color: var(--gold-light);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.film-year {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: var(--sepia);
+  font-style: italic;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+}
+
+.film-image {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  border: 1px solid var(--gold-dark);
+  box-shadow: var(--shadow-glow);
+  filter: saturate(0.9) brightness(0.95);
+}
+
+.film-image-placeholder {
+  width: 100%;
+  height: 280px;
+  border-radius: 2px;
+  margin-bottom: 30px;
+  border: 1px solid var(--gold-dark);
+  box-shadow: var(--shadow-glow);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--gold);
+  text-shadow: 0 0 20px rgba(212, 168, 75, 0.5);
+}
+
+.film-story {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--moonlight);
+  margin-bottom: 25px;
+  text-align: justify;
+}
+
+.film-story strong {
+  color: var(--gold-light);
+  font-weight: 600;
+}
+
+.film-quote {
+  font-family: 'IM Fell English', serif;
+  font-style: italic;
+  padding: 25px 30px;
+  margin: 30px 0;
+  background: rgba(0,0,0,0.3);
+  border-left: 3px solid var(--gold);
+  border-radius: 0 8px 8px 0;
+  color: var(--moonlight);
+  position: relative;
+}
+
+.film-quote::before {
+  content: '"';
+  position: absolute;
+  top: -10px;
+  left: 15px;
+  font-size: 4rem;
+  color: var(--gold);
+  opacity: 0.3;
+  font-family: 'Playfair Display', serif;
+}
+
+.character-highlight {
+  display: inline-block;
+  padding: 3px 10px;
+  background: rgba(212, 168, 75, 0.15);
+  border: 1px solid var(--gold-dark);
+  border-radius: 3px;
+  color: var(--gold-light);
+  font-weight: 600;
+  margin: 0 3px;
+}
+
+.house-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  border-radius: 50px;
+  font-family: 'Cinzel', serif;
+  font-size: 0.7rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.house-gryffindor { background: var(--gryffindor); color: #ffd700; }
+.house-slytherin { background: var(--slytherin); color: #c0c0c0; }
+.house-ravenclaw { background: var(--ravenclaw); color: #87ceeb; }
+.house-hufflepuff { background: var(--hufflepuff); color: var(--ink); }
+
+hr.film-divider {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold-dark), transparent);
+  margin: 40px 0;
+}
+
+/* ══ PROLOGUE ═════════════════════════════════════════ */
+.prologue {
+  position: relative;
+  z-index: 10;
+  max-width: 800px;
+  margin: 60px auto;
+  padding: 50px;
+  background: rgba(26, 10, 40, 0.7);
+  border: 1px solid rgba(212, 168, 75, 0.3);
+  text-align: center;
+  backdrop-filter: blur(5px);
+}
+
+.prologue h2 {
+  font-family: 'Cinzel', serif;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  letter-spacing: 4px;
+  margin-bottom: 25px;
+}
+
+.prologue p {
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: var(--moonlight);
+  font-style: italic;
+}
+
+/* ══ FOOTER ══════════════════════════════════════════ */
+footer {
+  position: relative;
+  z-index: 10;
+  text-align: center;
+  padding: 50px 20px;
+  margin-top: 80px;
+  background: linear-gradient(180deg, transparent, rgba(75, 0, 130, 0.15));
+  border-top: 1px solid rgba(212, 168, 75, 0.2);
+  color: var(--sepia);
+  font-style: italic;
+  font-size: 0.95rem;
+  letter-spacing: 1px;
+}
+
+.footer-mark {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: var(--gold-dark);
+  margin: 15px 0;
+}
+
+/* ══ RESPONSIVE ═══════════════════════════════════════ */
+@media (max-width: 768px) {
+  .film-section {
+    padding: 30px 20px;
+    margin-top: 50px;
+  }
+  .film-image,
+  .film-image-placeholder {
+    height: 200px;
+  }
+  .nav-pill {
+    font-size: 0.7rem;
+    padding: 8px 14px;
+    letter-spacing: 1px;
+  }
+  .site-header {
+    padding: 50px 15px 40px;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- Magical Backgrounds -->
+<canvas id="starfield"></canvas>
+<div class="magic-particles"></div>
+<div class="texture-overlay"></div>
+<div class="floating-orb orb-1"></div>
+<div class="floating-orb orb-2"></div>
+<div class="floating-orb orb-3"></div>
+
+<!-- Header -->
+<header class="site-header">
+  <svg class="crest-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="50" cy="50" r="45" stroke="#d4a84b" stroke-width="3" fill="rgba(75,0,130,0.2)"/>
+    <path d="M30 35 L35 60 L50 70 L65 60 L70 35 L50 40 Z" fill="#d4a84b" opacity="0.8"/>
+    <path d="M50 25 L53 35 L63 35 L55 41 L58 50 L50 45 L42 50 L45 41 L37 35 L47 35 Z" fill="#f0d68a"/>
+    <text x="50" y="82" text-anchor="middle" fill="#d4a84b" font-family="Cinzel" font-size="10">HOGWARTS</text>
+  </svg>
+  <h1 class="site-title">The Marauder's Chronicles</h1>
+  <p class="site-subtitle">A Cinematic Journey Through the Harry Potter Saga</p>
+</header>
+
+<!-- Navigation -->
+<nav class="magical-nav">
+  <div class="nav-inner">
+    <a href="#prologue" class="nav-pill active">Prologue</a>
+    <a href="#film-1" class="nav-pill">Philosopher's Stone</a>
+    <a href="#film-2" class="nav-pill">Chamber of Secrets</a>
+    <a href="#film-3" class="nav-pill">Prisoner of Azkaban</a>
+    <a href="#film-4" class="nav-pill">Goblet of Fire</a>
+    <a href="#film-5" class="nav-pill">Order of the Phoenix</a>
+    <a href="#film-6" class="nav-pill">Half-Blood Prince</a>
+    <a href="#film-7" class="nav-pill">Deathly Hallows I</a>
+    <a href="#film-8" class="nav-pill">Deathly Hallows II</a>
+  </div>
+</nav>
+
+<!-- Prologue -->
+<section id="prologue" class="prologue">
+  <h2>The Boy Who Lived</h2>
+  <p>
+    On his eleventh birthday, Harry Potter discovers he is no ordinary boy — he is a wizard.
+    Thus begins an extraordinary journey across <strong>eight cinematic tales</strong> of friendship, courage, love, and the eternal battle between light and darkness.
+    From the marble corridors of Hogwarts to the shadowy depths of the Forbidden Forest,
+    this chronicle recounts the complete story of the boy who changed the wizarding world forever.
+  </p>
+</section>
+
+<!-- Content -->
+<div class="content">
+
+  <!-- ══ FILM 1 ═══════════════════════════════════════ -->
+  <article id="film-1" class="film-section">
+    <div class="film-number">Film One</div>
+    <h2 class="film-title">Harry Potter and the Philosopher's Stone <span class="house-badge house-gryffindor">Gryffindor</span></h2>
+    <div class="film-year">Released 2001 · Directed by Chris Columbus</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #1a472a 0%, #2d1f33 50%, #0a0612 100%);">⚡</div>
+
+    <p class="film-story">
+      The journey begins on a humble London street, where <span class="character-highlight">Harry Potter</span> — an orphaned boy
+      living under the stairs — receives a letter that will change his life forever. From the towering
+      <span class="character-highlight">Hogwarts School of Witchcraft and Wizardry</span>, Harry finds a world where
+      staircases move, paintings talk, and every subject is a spell away from wonder.
+      He makes his first true friends, <span class="character-highlight">Ron Weasley</span> and <span class="character-highlight">Hermione Granger</span>,
+      and together they uncover a mystery that stretches back to the Dark Lord himself.
+    </p>
+
+    <p class="film-story">
+      At the heart of the castle lies a powerful secret — the <strong>Philosopher's Stone</strong>, an ancient artifact
+      capable of granting immortality. Harry, Ron, and Hermione venture through deadly obstacles
+      guarded by a three-headed dog named <span class="character-highlight">Fluffy</span>, withstand a life-sized
+      game of wizard's chess, and face their deepest fears in the Forbidden Forest.
+      In the climax, Harry confronts the shade of <span class="character-highlight">Lord Voldemort</span> himself,
+      learning the truth of his scar and the prophecy that binds his fate.
+    </p>
+
+    <div class="film-quote">
+      "It does not do to dwell on dreams and forget to live." — Albus Dumbledore
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 2 ═══════════════════════════════════════ -->
+  <article id="film-2" class="film-section">
+    <div class="film-number">Film Two</div>
+    <h2 class="film-title">Harry Potter and the Chamber of Secrets <span class="house-badge house-slytherin">Slytherin</span></h2>
+    <div class="film-year">Released 2002 · Directed by Chris Columbus</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #1a472a 0%, #0e3d22 50%, #0a0612 100%);">🐍</div>
+
+    <p class="film-story">
+      Dobby's warning echoes too late: the <strong>Chamber of Secrets</strong> has been reopened. A mysterious heir of
+      <span class="character-highlight">Salazar Slytherin</span> stalks the halls of Hogwarts, petrifying Muggle-born students
+      and unleashing a basilisk deep beneath the school. Harry discovers he can speak Parseltongue,
+      the language of snakes — a gift tied to the Dark Lord's power.
+    </p>
+
+    <p class="film-story">
+      Guided by a ghostly diary that turns out to be a <strong>Horcrux</strong> — a vessel for a fragment of Voldemort's soul —
+      Harry descends into the chamber itself. There, beside the weeping statue of Slytherin,
+      he faces not only the serpent but the memory of a young <span class="character-highlight">Tom Riddle</span>,
+      whose ambition and cruelty were forged at Hogwarts. With the help of <span class="character-highlight">Fawkes</span> the phoenix
+      and the legendary Sword of Gryffindor, Harry destroys the diary and saves Ginny Weasley,
+      unknowingly destroying a piece of Voldemort's soul.
+    </p>
+
+    <div class="film-quote">
+      "It is our choices that show what we truly are, far more than our abilities." — Albus Dumbledore
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 3 ═══════════════════════════════════════ -->
+  <article id="film-3" class="film-section">
+    <div class="film-number">Film Three</div>
+    <h2 class="film-title">Harry Potter and the Prisoner of Azkaban <span class="house-badge house-ravenclaw">Ravenclaw</span></h2>
+    <div class="film-year">Released 2004 · Directed by Alfonso Cuarón</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #0e1a40 0%, #1a1220 50%, #0a0612 100%);">🌙</div>
+
+    <p class="film-story">
+      The tone shifts darkly as <span class="character-highlight">Sirius Black</span>, a dangerous prisoner, escapes from
+      <strong>Azkaban</strong> — the most guarded wizard prison — apparently to find and kill Harry.
+      The <span class="character-highlight">Dementors</span>, soul-sucking guards of Azkaban, patrol Hogwarts, forcing Harry
+      to learn the complex <strong>Patronus Charm</strong> under the watchful eye of Professor Lupin —
+      a man whose kindness conceals a lycanthropic secret.
+    </p>
+
+    <p class="film-story">
+      Through Hermione's Time-Turner, the tale weaves a tapestry of time and sacrifice.
+      The truth unfolds: <span class="character-highlight">Peter Pettigrew</span>, disguised as Scabbers the rat,
+      betrayed Harry's parents. <span class="character-highlight">Sirius Black</span> is innocent. With the help of a werewolf,
+      a dog Animagus, and a twist of time, Harry prevents an innocent man from receiving the Kiss of Death
+      and gains a godfather he has always longed for, even as loss lingers in the cold air of Hogsmeade.
+    </p>
+
+    <div class="film-quote">
+      "Happiness can be found even in the darkest of times, if one only remembers to turn on the light." — Albus Dumbledore
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 4 ═══════════════════════════════════════ -->
+  <article id="film-4" class="film-section">
+    <div class="film-number">Film Four</div>
+    <h2 class="film-title">Harry Potter and the Goblet of Fire <span class="house-badge house-gryffindor">Gryffindor</span></h2>
+    <div class="film-year">Released 2005 · Directed by Mike Newell</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #8b0000 0%, #4a2d4f 50%, #1a1220 100%);">🔥</div>
+
+    <p class="film-story">
+      The <strong>Triwizard Tournament</strong> — a legendary contest between three schools of magic — returns to Hogwarts
+      after a century of dormancy. Against a host of age restrictions, Harry's name springs from the
+      <span class="character-highlight">Goblet of Fire</span>, binding him to a deadly competition that sees him face
+      a Hungarian Horntail dragon, merpeople beneath the lake's surface, and a labyrinth filled with both
+      wonder and mortal peril.
+    </p>
+
+    <p class="film-story">
+      The final task ends in tragedy. The trophy becomes a <strong>Portkey</strong>, transporting Harry and
+      <span class="character-highlight">Cedric Diggory</span> to the graveyard of Little Hangleton.
+      There, under a blood-red sky, <span class="character-highlight">Lord Voldemort</span> returns fully to life —
+      his body restored, his Death Eaters rising behind him. Cedric dies. Harry returns with a body
+      in his arms and a world on the brink. The war has truly begun.
+    </p>
+
+    <div class="film-quote">
+      "If you want to know what a man's like, take a good look at how he treats his inferiors, not his equals." — Sirius Black
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 5 ═══════════════════════════════════════ -->
+  <article id="film-5" class="film-section">
+    <div class="film-number">Film Five</div>
+    <h2 class="film-title">Harry Potter and the Order of the Phoenix <span class="house-badge house-gryffindor">Gryffindor</span></h2>
+    <div class="film-year">Released 2007 · Directed by David Yates</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #0a0612 0%, #2d1f33 50%, #4a2d4f 100%);">🦅</div>
+
+    <p class="film-story">
+      The Ministry of Magic refuses to believe Voldemort has returned, branding Harry a liar and a lunatic.
+      Meanwhile, <span class="character-highlight">Dolores Umbridge</span> arrives at Hogwarts as the new Defense Against the Dark Arts
+      professor, enforcing a regime of silence and blood-quill punishment. Desperate to learn how to defend
+      themselves, Harry, Hermione, and Ron form <span class="character-highlight"><strong>Dumbledore's Army</strong></span> —
+      a secret student group preparing for the war the Ministry refuses to acknowledge.
+    </p>
+
+    <p class="film-story">
+      At the Ministry's Hall of Prophecy, a ferocious battle erupts. Sirius Black falls through the veil
+      in the Department of Mysteries, lost to Harry forever. Dumbledore duels Voldemort in the atrium,
+      aurors arrive, and the truth is laid bare. Warborn hope returns, but grief lingers.
+      The Order of the Phoenix stands ready. <strong>The war has no time for childhood.</strong>
+    </p>
+
+    <div class="film-quote">
+      "We've all got both light and dark inside us. What matters is the part we choose to act on." — Sirius Black
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 6 ═══════════════════════════════════════ -->
+  <article id="film-6" class="film-section">
+    <div class="film-number">Film Six</div>
+    <h2 class="film-title">Harry Potter and the Half-Blood Prince <span class="house-badge house-slytherin">Slytherin</span></h2>
+    <div class="film-year">Released 2009 · Directed by David Yates</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #2d1f33 0%, #1a472a 50%, #0a0612 100%);">🧪</div>
+
+    <p class="film-story">
+      Darkness descends upon both wizarding and Muggle worlds. <strong>Death Eaters</strong> thrive, and
+      <span class="character-highlight">Lord Voldemort's</span> power grows unchecked. In a haze of fear and loss,
+      Harry finds an old textbook in Potions class — annotated by the <strong>Half-Blood Prince</strong>,
+      with secrets that make him the class's brightest star and lay the groundwork for a deadly curse.
+    </p>
+
+    <p class="film-story">
+      Dumbledore reveals the nature of <strong>Horcruxes</strong>: fragments of Voldemort's soul hidden across the world.
+      Together they journey to a cursed cave, where Dumbledore drinks a poison that weakens him irreversibly.
+      At Hogwarts, beneath the Astronomy Tower, <span class="character-highlight">Severus Snape</span> raises his wand.
+      The curse strikes. Dumbledore falls. The Half-Blood Prince's identity is revealed.
+      The hunt for Horcruxes begins — and Harry has no master now.
+    </p>
+
+    <div class="film-quote">
+      "Do not pity the dead, Harry. Pity the living, and, above all, those who live without love." — Albus Dumbledore
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 7 ═══════════════════════════════════════ -->
+  <article id="film-7" class="film-section">
+    <div class="film-number">Film Seven</div>
+    <h2 class="film-title">Harry Potter and the Deathly Hallows: Part I <span class="house-badge house-ravenclaw">Ravenclaw</span></h2>
+    <div class="film-year">Released 2010 · Directed by David Yates</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #0e1a40 0%, #2d1f33 50%, #4a2d4f 100%);">💀</div>
+
+    <p class="film-story">
+      The war reaches its climax. The <strong>Deathly Hallows</strong> — three legendary artifacts:
+      the Elder Wand, the Resurrection Stone, and the Cloak of Invisibility — call to Harry.
+      Abandoning the safety of school, Harry, Ron, and Hermione leave on a desperate mission to find
+      and destroy Voldemort's remaining Horcruxes, hunted relentlessly by Snatchers and Death Eaters.
+    </p>
+
+    <p class="film-story">
+      At <span class="character-highlight">Godric's Hollow</span>, Harry visits his parents' graves and the ruined home where he was born.
+      In the forest of <span class="character-highlight">Malfoy Manor</span>, they are captured and tortured.
+      <span class="character-highlight">Dobby</span> arrives to free them — and falls. His final breath is a hero's end.
+      The trio flees to <span class="character-highlight">Shell Cottage</span>, where grief and determination sharpen their resolve.
+      They retrieve the golden locket, unaware that its destruction requires a sacrifice far greater than magic.
+      The road is long. The end is near.
+    </p>
+
+    <div class="film-quote">
+      "It is a strange thing, but when you are dreading something, and would give anything to slow down time,
+      it has a curious way of speeding up." — J.K. Rowling
+    </div>
+  </article>
+
+  <hr class="film-divider">
+
+  <!-- ══ FILM 8 ═══════════════════════════════════════ -->
+  <article id="film-8" class="film-section">
+    <div class="film-number">Film Eight</div>
+    <h2 class="film-title">Harry Potter and the Deathly Hallows: Part II <span class="house-badge house-gryffindor">Gryffindor</span></h2>
+    <div class="film-year">Released 2011 · Directed by David Yates</div>
+
+    <div class="film-image-placeholder" style="background: linear-gradient(135deg, #8b0000 0%, #0a0612 50%, #1a472a 100%);">⚔️</div>
+
+    <p class="film-story">
+      <strong>THE FINAL BATTLE BEGINS.</strong> Hogwarts stands as the last fortress of light.
+      Voldemort and his army of Death Eaters and dark creatures converge on the castle.
+      In this final chapter, every spell, every life, every friendship is forged in fire.
+    </p>
+
+    <p class="film-story">
+      Harry walks into the Forbidden Forest, ready to die — and discovers that the Elder Wand's true master
+      is <span class="character-highlight">Draco Malfoy</span>, disarmed by Dumbledore on the tower. The Hallows are not the prize;
+      <strong>love</strong> is. In the Great Hall, the final duel erupts. Expelliarmus against Avada Kedavra.
+      When Voldemort's curse rebounds upon himself, the Dark Lord falls — not with a spell, but with the
+      weight of his own choices.
+    </p>
+
+    <p class="film-story">
+      <span class="character-highlight">Nineteen years later</span>, the children of Harry and Ginny board the Hogwarts Express.
+      An era ends. Another begins. The scar, at last, has not hurt for nineteen years.
+      The story closes — but in every reader and viewer, it lives on.
+    </p>
+
+    <div class="film-quote">
+      "After all this time?" "Always." — Severus Snape & Albus Dumbledore
+    </div>
+
+    <div style="text-align:center; margin-top:50px; padding:30px; border:2px solid var(--gold-dark); background:rgba(212,168,75,0.05);">
+      <p style="font-family:'Cinzel',serif; font-size:1.1rem; color:var(--gold-light); letter-spacing:3px; margin-bottom:10px;">
+        ✦ THE END ✦
+      </p>
+      <p style="font-style:italic; color:var(--sepia); font-size:0.95rem;">
+        "The story of the Boy Who Lived, told in eight films,<br>
+        carried by millions of fans, and remembered forever."
+      </p>
+    </div>
+  </article>
+
+</div>
+
+<!-- Footer -->
+<footer>
+  <p>A tribute to J.K. Rowling's magical universe</p>
+  <div class="footer-mark"></div>
+  <p>All film rights belong to Warner Bros. Entertainment Inc.</p>
+  <p style="margin-top:10px; font-size:0.85rem;">Built with ✨ by Kamesh Aether</p>
+</footer>
+
+<script>
+// ══ STARFIELD CANVAS ════════════════════════════════
+const canvas = document.getElementById('starfield');
+const ctx = canvas.getContext('2d');
+let stars = [];
+
+function initStars() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+  stars = [];
+  const count = Math.floor((canvas.width * canvas.height) / 6000);
+  for (let i = 0; i < count; i++) {
+    stars.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      r: Math.random() * 1.5 + 0.2,
+      opacity: Math.random() * 0.8 + 0.2,
+      twinkleSpeed: Math.random() * 0.02 + 0.005,
+      phase: Math.random() * Math.PI * 2
+    });
+  }
+}
+
+function drawStars() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  stars.forEach(star => {
+    const alpha = star.opacity + Math.sin(performance.now() * star.twinkleSpeed + star.phase) * 0.3;
+    ctx.beginPath();
+    ctx.arc(star.x, star.y, star.r, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(200, 190, 220, ${Math.max(0, alpha)})`;
+    ctx.fill();
+  });
+  requestAnimationFrame(drawStars);
+}
+
+initStars();
+drawStars();
+window.addEventListener('resize', initStars);
+
+// ══ SCROLL ANIMATIONS ══════════════════════════════
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.film-section').forEach(sec => observer.observe(sec));
+
+// ══ NAVIGATION SCROLL SPY ═══════════════════════════
+const navPills = document.querySelectorAll('.nav-pill');
+const sections = [];
+navPills.forEach(pill => {
+  const id = pill.getAttribute('href').substring(1);
+  const el = document.getElementById(id);
+  if (el) sections.push({ el, pill });
+});
+
+function updateActiveNav() {
+  let current = null;
+  sections.forEach(({ el }) => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top <= 150) current = el;
+  });
+  navPills.forEach(p => p.classList.remove('active'));
+  if (current) {
+    const match = sections.find(s => s.el === current);
+    if (match) match.pill.classList.add('active');
+  }
+}
+
+window.addEventListener('scroll', updateActiveNav);
+
+// ══ SMOOTH SCROLL ═══════════════════════════════════
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute('href'));
+    if (target) {
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+</script>
+
+</body>
+</html>
